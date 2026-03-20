@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>administrakt0r | Free Tech Projects, Hosting, AI Tools, and Open Source Resources</title>
+  <meta
+    name="description"
+    content="administrakt0r builds free-first tech projects for internet users: WordPress hosting in Europe, free AI tools and API access, responsible AI awareness, Linux and sysadmin resources, WordPress themes and plugins, audits, and open-source scripts."
+  />
+  <meta
+    name="keywords"
+    content="administrakt0r, free hosting europe, free wordpress hosting, free ai tools, ai api endpoint, responsible ai, linux resources, sysadmin resources, wordpress themes, wordpress plugins, open source scripts, domain audit, github pages"
+  />
+  <meta name="author" content="administrakt0r" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://administrakt0r.github.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="administrakt0r | Free Utility for the Web" />
+  <meta
+    property="og:description"
+    content="Free-first projects, practical development, hosting, AI tools, Linux resources, and open-source work by administrakt0r."
+  />
+  <meta property="og:url" content="https://administrakt0r.github.io/" />
+  <meta property="og:site_name" content="administrakt0r" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="administrakt0r | Free Utility for the Web" />
+  <meta
+    name="twitter:description"
+    content="Open-source tools, free services, responsible AI awareness, Linux resources, and practical development work by administrakt0r."
+  />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "administrakt0r",
+    "url": "https://administrakt0r.github.io/",
+    "sameAs": [
+      "https://github.com/administrakt0r",
+      "https://WPinEU.com",
+      "https://LLM.kiwi",
+      "https://responsibleai.pages.dev"
+    ],
+    "description": "Developer and systems-minded builder creating free-first hosting, AI tools, Linux resources, WordPress resources, audits, and open-source utility for internet users.",
+    "knowsAbout": [
+      "System administration",
+      "Linux optimization",
+      "WordPress",
+      "Web hosting",
+      "Artificial intelligence",
+      "Open source development",
+      "Performance tuning",
+      "Automation"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #081117;
+      --bg2: #0d1921;
+      --bg3: #132431;
+      --panel: rgba(13, 25, 33, 0.88);
+      --border: rgba(120, 170, 196, 0.16);
+      --border-strong: rgba(120, 170, 196, 0.28);
+      --text: #e8f1f5;
+      --text-dim: #9cb2bd;
+      --text-mute: #61808e;
+      --mint: #72f6c6;
+      --mint-deep: #2cae85;
+      --sky: #6ad6ff;
+      --gold: #ffbf61;
+      --rose: #ff8d77;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --font-display: "Syne", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(114, 246, 198, 0.14), transparent 32%),
+        radial-gradient(circle at top right, rgba(106, 214, 255, 0.16), transparent 30%),
+        linear-gradient(180deg, #081117 0%, #081117 30%, #09151c 100%);
+      color: var(--text);
+      font: 16px/1.7 var(--font-display);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.86), transparent 92%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mint);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--mint), var(--sky));
+      box-shadow: 0 0 16px rgba(114, 246, 198, 0.45);
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-head {
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+
+    .section-head h2 {
+      font: 800 clamp(2rem, 4vw, 3.1rem)/1.04 var(--font-display);
+      letter-spacing: -0.03em;
+      margin: 14px 0 14px;
+    }
+
+    .section-head p {
+      color: var(--text-dim);
+      font-size: 1.03rem;
+      max-width: 620px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(8, 17, 23, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 70px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(145deg, rgba(114, 246, 198, 0.18), rgba(106, 214, 255, 0.12)),
+        rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(114, 246, 198, 0.18);
+      color: var(--mint);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--mint), var(--sky));
+      color: #041016;
+      font-weight: 700;
+      box-shadow: 0 12px 30px rgba(106, 214, 255, 0.18);
+    }
+
+    .hero {
+      padding: 86px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.85fr);
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .hero-copy {
+      padding: 10px 0 0;
+    }
+
+    .hero h1 {
+      margin: 20px 0 20px;
+      font: 800 clamp(3rem, 7vw, 6rem)/0.95 var(--font-display);
+      letter-spacing: -0.06em;
+      max-width: 780px;
+    }
+
+    .hero h1 .accent {
+      color: var(--gold);
+    }
+
+    .hero p {
+      max-width: 670px;
+      font-size: 1.12rem;
+      color: var(--text-dim);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 34px 0 42px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--mint), var(--sky));
+      color: #051118;
+      box-shadow: 0 18px 36px rgba(106, 214, 255, 0.16);
+    }
+
+    .btn-secondary {
+      border-color: rgba(114, 246, 198, 0.2);
+      background: rgba(114, 246, 198, 0.06);
+      color: var(--mint);
+    }
+
+    .btn-ghost {
+      border-color: rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text);
+    }
+
+    .signal-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .signal-chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: calc(var(--radius) + 4px);
+      padding: 24px;
+      background:
+        linear-gradient(180deg, rgba(255, 191, 97, 0.08), transparent 38%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
+        var(--panel);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255, 191, 97, 0.14), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(114, 246, 198, 0.12), transparent 30%);
+      pointer-events: none;
+    }
+
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+    }
+
+    .dot:nth-child(1) { background: #ff6b65; }
+    .dot:nth-child(2) { background: #ffbf61; }
+    .dot:nth-child(3) { background: #72f6c6; }
+
+    .terminal-title {
+      margin-left: 8px;
+      color: var(--text-mute);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    .panel-block + .panel-block {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .code-line,
+    .status-line {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .code-line strong,
+    .status-line strong {
+      color: var(--text);
+    }
+
+    .status-line + .status-line,
+    .code-line + .code-line {
+      margin-top: 10px;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 46px;
+    }
+
+    .quick-card {
+      padding: 18px 18px 16px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .quick-card small {
+      display: block;
+      margin-bottom: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+    }
+
+    .quick-card p {
+      color: var(--text);
+      font-size: 0.96rem;
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 24px;
+    }
+
+    .statement {
+      padding: 28px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(106, 214, 255, 0.08), rgba(114, 246, 198, 0.05)),
+        rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .statement p {
+      font-size: clamp(1.18rem, 2vw, 1.48rem);
+      line-height: 1.55;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    .principles {
+      display: grid;
+      gap: 14px;
+    }
+
+    .principle {
+      padding: 22px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .principle h3 {
+      font: 700 1.05rem/1.1 var(--font-display);
+      margin-bottom: 8px;
+    }
+
+    .principle p {
+      color: var(--text-dim);
+      font-size: 0.97rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      padding: 24px;
+      min-height: 280px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015)),
+        rgba(8, 17, 23, 0.8);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -26% auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 68%);
+      pointer-events: none;
+    }
+
+    .project-card[data-tone="mint"] {
+      background:
+        linear-gradient(180deg, rgba(114, 246, 198, 0.1), rgba(114, 246, 198, 0.02)),
+        rgba(8, 17, 23, 0.84);
+    }
+
+    .project-card[data-tone="sky"] {
+      background:
+        linear-gradient(180deg, rgba(106, 214, 255, 0.1), rgba(106, 214, 255, 0.02)),
+        rgba(8, 17, 23, 0.84);
+    }
+
+    .project-card[data-tone="gold"] {
+      background:
+        linear-gradient(180deg, rgba(255, 191, 97, 0.11), rgba(255, 191, 97, 0.03)),
+        rgba(8, 17, 23, 0.84);
+    }
+
+    .project-kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    .project-card h3 {
+      font: 800 1.55rem/1.02 var(--font-display);
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: var(--text-dim);
+      margin-bottom: 18px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .project-link:hover {
+      color: var(--mint);
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .resource-card {
+      padding: 22px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .resource-card h3 {
+      font: 700 1.02rem/1.1 var(--font-display);
+      margin: 10px 0 8px;
+    }
+
+    .resource-card p {
+      color: var(--text-dim);
+      font-size: 0.96rem;
+      margin-bottom: 16px;
+    }
+
+    .resource-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      font-family: var(--font-mono);
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .profile-block {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .profile-card,
+    .timeline {
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015)),
+        rgba(8, 17, 23, 0.84);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card {
+      padding: 28px;
+    }
+
+    .profile-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mint);
+      margin-bottom: 16px;
+    }
+
+    .profile-card h3 {
+      font: 800 2rem/0.98 var(--font-display);
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    .profile-card p {
+      color: var(--text-dim);
+      margin-bottom: 18px;
+    }
+
+    .profile-list {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .profile-list li {
+      padding-left: 18px;
+      position: relative;
+      color: var(--text);
+    }
+
+    .profile-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--rose));
+    }
+
+    .timeline {
+      padding: 10px 28px;
+    }
+
+    .timeline-item {
+      padding: 18px 0 18px 28px;
+      border-left: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 23px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--mint), var(--sky));
+      box-shadow: 0 0 18px rgba(106, 214, 255, 0.28);
+    }
+
+    .timeline-item small {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .timeline-item h3 {
+      font-size: 1.08rem;
+      margin-bottom: 7px;
+    }
+
+    .timeline-item p {
+      color: var(--text-dim);
+      font-size: 0.97rem;
+    }
+
+    .cta-panel {
+      padding: 28px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(255, 191, 97, 0.14), rgba(106, 214, 255, 0.09)),
+        rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-panel h2 {
+      font: 800 clamp(1.8rem, 3vw, 2.8rem)/1 var(--font-display);
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+
+    .cta-panel p {
+      max-width: 650px;
+      color: var(--text-dim);
+    }
+
+    footer {
+      padding: 34px 0 52px;
+      color: var(--text-mute);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 26px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 1080px) {
+      .quick-grid,
+      .resources-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .mission-grid,
+      .profile-block,
+      .cta-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-panel {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .section {
+        padding: 74px 0;
+      }
+
+      .hero {
+        padding: 68px 0 48px;
+      }
+
+      .quick-grid,
+      .projects-grid,
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel,
+      .statement,
+      .profile-card,
+      .timeline,
+      .project-card,
+      .resource-card,
+      .cta-panel {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="administrakt0r homepage">
+        <span class="brand-mark">a0</span>
+        <span>administrakt0r</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#mission">Mission</a>
+        <a href="#projects">Projects</a>
+        <a href="#resources">Resources</a>
+        <a href="#profile">Profile</a>
+        <a class="nav-cta" href="https://github.com/administrakt0r" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Free-first builder for the open web</div>
+          <h1>
+            Tech, development, and <span class="accent">useful freedom</span> for internet users.
+          </h1>
+          <p>
+            I am administrakt0r. I build practical things for people who want the web to stay useful:
+            free hosting, free AI tools, responsible AI awareness, Linux and system administration
+            resources, WordPress themes and plugins, audits, scripts, and open-source utilities that do
+            real work before asking for anything back.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Explore Projects</a>
+            <a class="btn btn-secondary" href="https://github.com/administrakt0r" target="_blank" rel="noopener">Open GitHub Profile</a>
+            <a class="btn btn-ghost" href="/debian13-optimization/">Debian 13 Optimization Page</a>
+          </div>
+
+          <div class="signal-row">
+            <span class="signal-chip">Free utility over empty hype</span>
+            <span class="signal-chip">Hosting + AI + Linux + WordPress</span>
+            <span class="signal-chip">Open source when it should be</span>
+            <span class="signal-chip">Built for actual users, not pitch decks</span>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Current focus and project status">
+          <div class="terminal-bar">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="terminal-title">live focus / administrakt0r</span>
+          </div>
+
+          <div class="panel-block">
+            <div class="code-line"><strong>$</strong> mission --current</div>
+            <div class="status-line">[active] keep useful services free for as many users as possible</div>
+            <div class="status-line">[active] ship tools that solve problems before monetization pressure ruins them</div>
+            <div class="status-line">[active] publish resources that make users more independent online</div>
+          </div>
+
+          <div class="panel-block">
+            <div class="code-line"><strong>$</strong> projects --featured</div>
+            <div class="status-line">[online] WPinEU.com</div>
+            <div class="status-line">[online] LLM.kiwi</div>
+            <div class="status-line">[online] responsibleai.pages.dev</div>
+            <div class="status-line">[online] /debian13-optimization/</div>
+            <div class="status-line">[open] github.com/administrakt0r</div>
+          </div>
+
+          <div class="panel-block">
+            <div class="code-line"><strong>$</strong> domains --interest</div>
+            <div class="status-line">[01] hosting in Europe</div>
+            <div class="status-line">[02] free AI access and responsible usage</div>
+            <div class="status-line">[03] Linux performance, sysadmin sanity, automation</div>
+            <div class="status-line">[04] WordPress resources, themes, plugins, and audits</div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="quick-grid" aria-label="Homepage highlights">
+        <div class="quick-card">
+          <small>WPinEU.com</small>
+          <p>Free WordPress hosting in Europe for people who need a real starting point, not a trap.</p>
+        </div>
+        <div class="quick-card">
+          <small>LLM.kiwi</small>
+          <p>Free AI tools and a free AI API endpoint with practical access at the center.</p>
+        </div>
+        <div class="quick-card">
+          <small>Responsible AI</small>
+          <p>Awareness work focused on safer, saner, more honest AI usage on the web.</p>
+        </div>
+        <div class="quick-card">
+          <small>Open Source</small>
+          <p>Scripts, Linux tuning, automation, and more free resources on GitHub.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="mission">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Mission</div>
+        <h2>A personal mission to keep the internet useful, practical, and free where it matters.</h2>
+        <p>
+          My work sits at the intersection of development, systems, and public utility. I like building
+          infrastructure, publishing resources, and turning technical knowledge into something that helps
+          real users move faster, host better, learn more, and stay independent.
+        </p>
+      </div>
+
+      <div class="mission-grid">
+        <div class="statement">
+          <p>
+            I care about technology because it can empower people, not just extract from them. That is the
+            inner thread running through everything here: free services for internet users, practical
+            development, open resources, responsible AI, and tools that reduce friction instead of adding
+            more gates. If a project can make the web more accessible, more competent, or less annoying, I
+            want to build it.
+          </p>
+        </div>
+
+        <div class="principles">
+          <div class="principle">
+            <h3>Free first, value first</h3>
+            <p>People should get real utility before they ever hit limits, upsells, or unnecessary friction.</p>
+          </div>
+          <div class="principle">
+            <h3>Practical over performative</h3>
+            <p>I prefer infrastructure, scripts, audits, and resources that solve real problems over polished emptiness.</p>
+          </div>
+          <div class="principle">
+            <h3>Teach while building</h3>
+            <p>Publishing resources matters as much as shipping products because independence starts with understanding.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Featured Projects</div>
+        <h2>Free-first projects and freemium work with a clear technical point of view.</h2>
+        <p>
+          These are the projects that best reflect what I care about: real infrastructure, accessible tools,
+          clean delivery, and practical help for internet users, developers, site owners, and curious builders.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <a class="project-card" data-tone="mint" href="https://WPinEU.com" target="_blank" rel="noopener">
+          <div class="project-kicker">Hosting / Europe</div>
+          <h3>WPinEU.com</h3>
+          <p>
+            Free WordPress hosting in Europe for users who want a serious starting point without ads, nonsense,
+            or immediate paywalls getting in the way of building.
+          </p>
+          <div class="project-tags">
+            <span class="tag">WordPress</span>
+            <span class="tag">Hosting</span>
+            <span class="tag">Free-first</span>
+          </div>
+          <span class="project-link">Visit WPinEU.com</span>
+        </a>
+
+        <a class="project-card" data-tone="sky" href="https://LLM.kiwi" target="_blank" rel="noopener">
+          <div class="project-kicker">AI / Access</div>
+          <h3>LLM.kiwi</h3>
+          <p>
+            Free AI tools and a free AI API endpoint built around access, experimentation, and practical use
+            instead of artificial scarcity.
+          </p>
+          <div class="project-tags">
+            <span class="tag">AI tools</span>
+            <span class="tag">API endpoint</span>
+            <span class="tag">Freemium</span>
+          </div>
+          <span class="project-link">Visit LLM.kiwi</span>
+        </a>
+
+        <a class="project-card" data-tone="gold" href="https://responsibleai.pages.dev" target="_blank" rel="noopener">
+          <div class="project-kicker">Awareness / Safety</div>
+          <h3>Responsible AI</h3>
+          <p>
+            A focused awareness page about responsible AI usage: how people should think about tools,
+            claims, outputs, limitations, and the human responsibility that still matters.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Awareness</span>
+            <span class="tag">Ethics</span>
+            <span class="tag">Public education</span>
+          </div>
+          <span class="project-link">Open responsibleai.pages.dev</span>
+        </a>
+
+        <a class="project-card" data-tone="sky" href="/debian13-optimization/">
+          <div class="project-kicker">Linux / Performance</div>
+          <h3>Debian 13 Optimization</h3>
+          <p>
+            A dedicated landing page for a Debian 13 GNOME optimization script focused on practical desktop
+            speed, safe tuning, and clean system behavior.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Linux</span>
+            <span class="tag">Performance</span>
+            <span class="tag">Open source</span>
+          </div>
+          <span class="project-link">Open the Debian page</span>
+        </a>
+
+        <a class="project-card" data-tone="mint" href="https://github.com/administrakt0r" target="_blank" rel="noopener">
+          <div class="project-kicker">Code / Publishing</div>
+          <h3>GitHub Profile</h3>
+          <p>
+            More free resources, scripts, utilities, experiments, and published code. If it solves a real
+            problem, there is a good chance it ends up there.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Scripts</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Resources</span>
+          </div>
+          <span class="project-link">Visit github.com/administrakt0r</span>
+        </a>
+
+        <div class="project-card" data-tone="gold">
+          <div class="project-kicker">Audits / Diagnostics</div>
+          <h3>Domain Audit</h3>
+          <p>
+            Technical and trust-focused domain audit thinking: site quality, performance, hygiene, structure,
+            credibility signals, and the practical fixes that make a web property stronger.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Diagnostics</span>
+            <span class="tag">Trust signals</span>
+            <span class="tag">Performance</span>
+          </div>
+          <span class="project-link">Part of the broader toolkit here</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="resources">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Free Resources</div>
+        <h2>Resources for builders, administrators, WordPress users, and people who like knowing how things work.</h2>
+        <p>
+          The projects above are only part of the picture. This site also stands for a wider body of free
+          material: system administration knowledge, WordPress tooling, audits, scripts, and practical
+          resources meant to make users more capable and less dependent.
+        </p>
+      </div>
+
+      <div class="resources-grid">
+        <div class="resource-card">
+          <div class="resource-icon">SYS</div>
+          <h3>System administration resources</h3>
+          <p>
+            Linux tuning, infrastructure notes, optimization guidance, troubleshooting habits, and practical
+            sysadmin resources designed for people who prefer competence over ceremony.
+          </p>
+          <a class="project-link" href="https://github.com/administrakt0r" target="_blank" rel="noopener">See related GitHub work</a>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-icon">WP</div>
+          <h3>WordPress themes and plugins</h3>
+          <p>
+            Free WordPress resources by me, including themes, plugins, and useful supporting material that
+            help site owners build faster and stay in control.
+          </p>
+          <a class="project-link" href="https://github.com/administrakt0r" target="_blank" rel="noopener">Browse WordPress-related code</a>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-icon">AUD</div>
+          <h3>Domain audit thinking</h3>
+          <p>
+            Reviews and diagnostics focused on performance, structure, trust, usability, and the technical
+            details that quietly shape whether a site feels solid or neglected.
+          </p>
+          <a class="project-link" href="#projects">See audit-related focus</a>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-icon">OSS</div>
+          <h3>Scripts and open-source utility</h3>
+          <p>
+            Free scripts, automation, optimizers, helper tools, and code published because useful software
+            should exist in public, not only behind logins and subscriptions.
+          </p>
+          <a class="project-link" href="https://github.com/administrakt0r" target="_blank" rel="noopener">Open the GitHub profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="profile">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Profile</div>
+        <h2>The through-line behind the work.</h2>
+        <p>
+          I like technology that earns its place. That means development with a point, systems work with
+          discipline, and products or resources that give something meaningful back to internet users.
+        </p>
+      </div>
+
+      <div class="profile-block">
+        <div class="profile-card">
+          <div class="profile-label">administrakt0r</div>
+          <h3>Developer. Systems-minded builder. Free utility advocate.</h3>
+          <p>
+            My profile is less about one niche and more about a pattern: build things that work, publish
+            things that help, and lower the barrier for people who want useful tech without the usual noise.
+          </p>
+          <ul class="profile-list">
+            <li>Love for tech and development, especially where software meets infrastructure.</li>
+            <li>Strong interest in Linux, performance, automation, hosting, WordPress, and AI tooling.</li>
+            <li>Preference for practical execution, clean interfaces, and honest technical framing.</li>
+            <li>Long-term focus on free services and public resources that increase user independence online.</li>
+          </ul>
+        </div>
+
+        <div class="timeline" aria-label="How the work tends to show up">
+          <div class="timeline-item">
+            <small>Build</small>
+            <h3>Ship tools that solve immediate problems</h3>
+            <p>Hosting, AI access, Linux optimization, and scripts that are useful on day one, not just aspirational.</p>
+          </div>
+          <div class="timeline-item">
+            <small>Publish</small>
+            <h3>Turn private know-how into public resources</h3>
+            <p>Guides, utilities, themes, plugins, and reusable technical work lower the barrier for other people.</p>
+          </div>
+          <div class="timeline-item">
+            <small>Advocate</small>
+            <h3>Push for saner use of technology</h3>
+            <p>Responsible AI, honest claims, stronger infrastructure, and more user agency are part of the same mission.</p>
+          </div>
+          <div class="timeline-item">
+            <small>Repeat</small>
+            <h3>Keep the free layer meaningful</h3>
+            <p>The internet gets better when useful things remain accessible, not when everything starts with a paywall.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-panel">
+        <div>
+          <div class="eyebrow">Where To Start</div>
+          <h2>Pick the path that matches what you need.</h2>
+          <p>
+            Need hosting? Start with WPinEU. Want AI access? Go to LLM.kiwi. Care about safer AI usage? Open the
+            Responsible AI page. Want code, scripts, and more free resources? Head to GitHub. Want Linux speed?
+            The Debian optimization page is ready too.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://WPinEU.com" target="_blank" rel="noopener">WPinEU.com</a>
+          <a class="btn btn-secondary" href="https://LLM.kiwi" target="_blank" rel="noopener">LLM.kiwi</a>
+          <a class="btn btn-ghost" href="https://responsibleai.pages.dev" target="_blank" rel="noopener">Responsible AI</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p>administrakt0r / free utility, open resources, practical development, and internet usefulness.</p>
+      <div class="footer-links">
+        <a href="https://github.com/administrakt0r" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://WPinEU.com" target="_blank" rel="noopener">WPinEU.com</a>
+        <a href="https://LLM.kiwi" target="_blank" rel="noopener">LLM.kiwi</a>
+        <a href="https://responsibleai.pages.dev" target="_blank" rel="noopener">Responsible AI</a>
+        <a href="/debian13-optimization/">Debian 13 Optimization</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
