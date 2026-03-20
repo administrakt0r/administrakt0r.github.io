@@ -61,7 +61,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -82,7 +82,7 @@
       --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
       --radius: 18px;
       --radius-sm: 12px;
-      --font-display: "Syne", sans-serif;
+      --font-display: "IBM Plex Sans", sans-serif;
       --font-mono: "JetBrains Mono", monospace;
     }
 
@@ -122,6 +122,18 @@
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    a.text-link {
+      color: var(--sky);
+      text-decoration: underline;
+      text-decoration-color: rgba(106, 214, 255, 0.35);
+      text-underline-offset: 0.22em;
+    }
+
+    a.text-link:hover {
+      color: var(--mint);
+      text-decoration-color: rgba(114, 246, 198, 0.5);
     }
 
     img {
@@ -275,8 +287,8 @@
 
     .hero h1 {
       margin: 20px 0 20px;
-      font: 800 clamp(3rem, 7vw, 6rem)/0.95 var(--font-display);
-      letter-spacing: -0.06em;
+      font: 700 clamp(3rem, 7vw, 5.4rem)/0.98 var(--font-display);
+      letter-spacing: -0.045em;
       max-width: 780px;
     }
 
@@ -288,6 +300,10 @@
       max-width: 670px;
       font-size: 1.12rem;
       color: var(--text-dim);
+    }
+
+    .hero-project-links {
+      margin-top: 16px;
     }
 
     .hero-actions {
@@ -431,11 +447,19 @@
     }
 
     .quick-card {
+      display: block;
       padding: 18px 18px 16px;
       border-radius: var(--radius-sm);
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(8px);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .quick-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(106, 214, 255, 0.24);
+      background: rgba(255, 255, 255, 0.045);
     }
 
     .quick-card small {
@@ -451,6 +475,21 @@
     .quick-card p {
       color: var(--text);
       font-size: 0.96rem;
+    }
+
+    .quick-link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 12px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--sky);
+    }
+
+    .quick-card:hover .quick-link {
+      color: var(--mint);
     }
 
     .mission-grid {
@@ -888,6 +927,14 @@
             resources, WordPress themes and plugins, audits, scripts, and open-source utilities that do
             real work before asking for anything back.
           </p>
+          <p class="hero-project-links">
+            Direct links:
+            <a class="text-link" href="https://WPinEU.com" target="_blank" rel="noopener">WPinEU.com</a>,
+            <a class="text-link" href="https://LLM.kiwi" target="_blank" rel="noopener">LLM.kiwi</a>,
+            <a class="text-link" href="https://responsibleai.pages.dev" target="_blank" rel="noopener">Responsible AI</a>,
+            <a class="text-link" href="/debian13-optimization/">Debian 13 Optimization</a>,
+            <a class="text-link" href="https://github.com/administrakt0r" target="_blank" rel="noopener">GitHub</a>.
+          </p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">Explore Projects</a>
@@ -938,22 +985,26 @@
       </div>
 
       <div class="quick-grid" aria-label="Homepage highlights">
-        <div class="quick-card">
+        <a class="quick-card" href="https://WPinEU.com" target="_blank" rel="noopener">
           <small>WPinEU.com</small>
           <p>Free WordPress hosting in Europe for people who need a real starting point, not a trap.</p>
-        </div>
-        <div class="quick-card">
+          <span class="quick-link">Open project</span>
+        </a>
+        <a class="quick-card" href="https://LLM.kiwi" target="_blank" rel="noopener">
           <small>LLM.kiwi</small>
           <p>Free AI tools and a free AI API endpoint with practical access at the center.</p>
-        </div>
-        <div class="quick-card">
+          <span class="quick-link">Open project</span>
+        </a>
+        <a class="quick-card" href="https://responsibleai.pages.dev" target="_blank" rel="noopener">
           <small>Responsible AI</small>
           <p>Awareness work focused on safer, saner, more honest AI usage on the web.</p>
-        </div>
-        <div class="quick-card">
+          <span class="quick-link">Open project</span>
+        </a>
+        <a class="quick-card" href="https://github.com/administrakt0r" target="_blank" rel="noopener">
           <small>Open Source</small>
           <p>Scripts, Linux tuning, automation, and more free resources on GitHub.</p>
-        </div>
+          <span class="quick-link">Open profile</span>
+        </a>
       </div>
     </div>
   </header>

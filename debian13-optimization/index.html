@@ -49,7 +49,7 @@
   <!-- ══════════════════════════════════════════════════════════ FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ═══════════════════════════════════════════════ DESIGN TOKENS */
@@ -69,7 +69,7 @@
       --text-dim:  #6a8a92;
       --text-mute: #3a5560;
       --font-mono: 'JetBrains Mono', monospace;
-      --font-sans: 'Syne', sans-serif;
+      --font-sans: 'IBM Plex Sans', sans-serif;
       --radius:    6px;
       --glow-g:    0 0 24px rgba(57,255,143,0.18);
       --glow-c:    0 0 24px rgba(0,212,232,0.18);
